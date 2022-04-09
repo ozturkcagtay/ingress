@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-resource-3
+spec:
+  rules:
+  - host: 194.146.26.44
+    http:
+      paths:
+      - path: /appx
+        pathType: Prefix
+        backend:
+          service:
+            name: nginx-deploy-green
+            port:
+              number: 80
